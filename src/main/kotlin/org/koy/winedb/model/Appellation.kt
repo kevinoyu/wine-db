@@ -14,9 +14,9 @@ class Appellation {
     var id: Long = 0
 
     @ManyToOne
-    var country: Country? = null
+    var region: Region? = null
 
     @ManyToMany
-    var producers: Set<Producer> = mutableSetOf()
+    var producers: MutableSet<Producer> = mutableSetOf()
 
 }

@@ -8,12 +8,12 @@ import javax.persistence.Id
 import javax.persistence.OneToMany
 
 @Entity
-class Country {
+class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0
 
-    @OneToMany(cascade = [CascadeType.ALL], mappedBy = "country")
+    @OneToMany(cascade = [CascadeType.ALL], mappedBy = "region")
     var appellations: MutableSet<Appellation> = mutableSetOf()
 
 }
