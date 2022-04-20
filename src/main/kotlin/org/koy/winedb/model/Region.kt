@@ -1,19 +1,22 @@
 package org.koy.winedb.model
 
-import javax.persistence.CascadeType
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.OneToMany
+import javax.persistence.*
 
 @Entity
 class Region {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = 0
+    var name: String = ""
+    var classification: String = ""
+    var details : String = ""
 
-    @OneToMany(cascade = [CascadeType.ALL], mappedBy = "region")
-    var appellations: MutableSet<Appellation> = mutableSetOf()
+    @Enumerated(EnumType.STRING)
+    var type: RegionType = RegionType.COUNTRY
 
+    @ManyToOne
+    lateinit var parentRegion: Region
+
+    @ManyToMany
+    var varietals: MutableSet<Varietal> = mutableSetOf()
 }

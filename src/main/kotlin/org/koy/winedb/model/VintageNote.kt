@@ -12,7 +12,7 @@ class VintageNote {
     var vintage: Vintage? = null
 
     @ManyToOne
-    var appellation: Appellation? = null
+    lateinit var region: Region
 
     var note: String = ""
 }

@@ -1,10 +1,6 @@
 package org.koy.winedb.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.OneToMany
+import javax.persistence.*
 
 @Entity
 class Vintage {
@@ -14,4 +10,7 @@ class Vintage {
 
     @OneToMany
     var vintageNotes: MutableSet<VintageNote> = mutableSetOf()
+
+    @OneToMany
+    var wines : MutableSet<Wine> = mutableSetOf()
 }

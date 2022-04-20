@@ -13,9 +13,16 @@ class Wine {
     var name: String = ""
 
     @ManyToOne
-    var vintage: Vintage = Vintage()
+    lateinit var vintage: Vintage
+
+    @ManyToOne
+    lateinit var producer: Producer
+
+    @ManyToOne
+    lateinit var region: Region
 
     @ManyToMany
-    var grapes: MutableSet<Grape> = mutableSetOf()
+    var varietals: MutableSet<Varietal> = mutableSetOf()
 
+    var price: Double = 0.0
 }

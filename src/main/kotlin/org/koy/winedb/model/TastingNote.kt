@@ -1,10 +1,6 @@
 package org.koy.winedb.model
 
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.ManyToOne
+import javax.persistence.*
 
 @Entity
 class TastingNote {
@@ -17,4 +13,6 @@ class TastingNote {
 
     @ManyToOne
     lateinit var user: User
+
+    var note : String = ""
 }
